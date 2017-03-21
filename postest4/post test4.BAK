@@ -8,14 +8,13 @@ PREDICATES
  tidak_tersedia(menu)
  
 CLAUSES 
- makanan(nasi_kucing,2500).
- makanan(nasi_kuning,22000).
- makanan(nasi_goreng,25000).
+ makanan(nasi_kucing,25000).
+ makanan(nasi_kuning,21000).
+ makanan(nasi_goreng,21000).
  
  yang_tersedia:-
 	makanan(Menu,Harga),
-	Harga > 21000,									
-	
+	Harga < 25000,									
 	write("Makanan yang tersedia, adalah ", Menu," dengan harga ",Harga,"\n"),			
 	fail,	
 	not(tidak_tersedia(harga)).						
