@@ -17,7 +17,7 @@ CLAUSES
 	Harga < 25000,									
 	write("Makanan yang tersedia, adalah ", Menu," dengan harga ",Harga,"\n"),			
 	fail,	
-	not(tidak_tersedia(harga)).						
+	not(tidak_tersedia(Harga)).						
 	
  tidak_tersedia(nasi_kucing).
  
