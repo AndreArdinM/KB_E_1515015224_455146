@@ -1,0 +1,29 @@
+domains
+  people = wawancara_pekerjaan(nama,lama,lulusan,jurusan,alasan)  %disini merukanan data object jamak yang menyimpan banyak item tunggal
+  lama = integer %domain umur hanya menerima inputan brupa angka saja
+  nama,lulusan,jurusan,alasan = string %domain  hanya menerima inputan brupa sebuah string
+
+predicates
+  run - procedure () 
+
+clauses
+  run:-
+      write("Wawancara Pekerjaan PT.Yuo"),nl,   /* berupa inputan yang dimana akan tercetak dengan menggunaka fungsi write dan akan di simpan di dalam readln */
+      write("Siapa Nama Anda ? "), readln(Nama),
+      write("Berapa Tahun Lamanya Mencari Pekerjaan ? "), readint(Lama),
+      write("Lulusan Kamu Dimana ?"), readln(Lulusan),
+      write("Dijurusan apa  ? "), readln(Jurusan),
+      write("Alasan Anda Kenapa mau bekerja disini ?"),readln(Alasan),
+      Wawancara=wawancara_pekerjaan(Nama,Lama,Lulusan,Jurusan,Alasan), 
+      write(Wawancara),nl,
+      write("jika anda ingin lagi kembali lagi  OK ketik (y/n)"), /* lacak balik disini jika anda ketik selain y maka dia akan kembali ke awal dan jika ketik y maka program berhenti*/ 
+      readchar(Ch),nl,Ch='y', !. /* LACAK BALIK DIMANA KETIKA KITA KETIK  MAKAN PROGRAM BERHENTI */
+
+  run :-                    /* jika autran yang ada maka dia akan kembali ke awal  */
+	 nl,nl,
+	 write("Mohon Dijawab Dengan Benar!"),
+	 nl,nl,run.
+
+goal
+  
+  run.
